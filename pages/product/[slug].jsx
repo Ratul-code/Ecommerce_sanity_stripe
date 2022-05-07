@@ -14,6 +14,7 @@ const ProductDetails = ({ products, product}) => {
   useEffect(()=>{
     setQty(1);
   },[product])
+  // console.table(products)
   return (
     <div>
       <div className="product-detail-container">
@@ -115,6 +116,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
       products,
       product,
     },
+    revalidate:10
   };
 };
 
